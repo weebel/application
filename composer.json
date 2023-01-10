@@ -1,0 +1,29 @@
+{
+  "name": "weebel/application",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "weebel/contracts": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Weebel\\Application\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Weebel\\Application\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "symfony/var-dumper": "^6.0",
+    "phpunit/phpunit": "^9.5",
+    "friendsofphp/php-cs-fixer": "^3.13",
+    "mockery/mockery": "^1.5",
+    "weebel/container": "dev-master"
+  },
+  "suggest": {
+    "weebel/container": "Required to be used as container inside the application"
+  }
+}
