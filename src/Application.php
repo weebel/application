@@ -23,7 +23,7 @@ class Application
             $arguments['container'] : $this->makeContainer();
 
         $this->kernelManager = array_key_exists('kernelManager', $arguments) ?
-            $arguments['kernelManager'] : $this->makeKernelManager($arguments);
+            $arguments['kernelManager']($arguments) : $this->makeKernelManager($arguments);
 
         $this->registerApp($arguments);
         $this->registerContainer();
