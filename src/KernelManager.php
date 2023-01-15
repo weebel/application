@@ -19,6 +19,10 @@ class KernelManager
         //
     ];
 
+    protected $baseModeProviders = [
+        //
+    ];
+
     protected $providers = [
         //
     ];
@@ -62,6 +66,7 @@ class KernelManager
     {
         return array_unique(array_merge(
             $this->baseProviders,
+            array_key_exists($mode, $this->baseModeProviders) ? $this->baseModeProviders[$mode] : [],
             $this->providers,
             array_key_exists($mode, $this->modeProviders) ? $this->modeProviders[$mode] : [],
             $env === 'dev' ? $this->devProviders : []
